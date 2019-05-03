@@ -11,6 +11,10 @@ router.get('/', (req, res) => {
   });
 });
 
+router.get('/new', (req, res) => {
+  res.render('new.ejs');
+})
+
 router.get('/seed', (req, res) => {
   Shop.create(shopSeed, (err, data) => {
     if (err) {
