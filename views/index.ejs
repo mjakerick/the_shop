@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/new">Add New Shop</a>
+    </nav>
+    <h1>the shop.</h1>
+    <div class="container">
+      <% for (let i = 0; i < shops.length; i++) { %>
+        <div class="shop">
+          <a href="/shops/<%=shops[i].id;%>"><img src="<%=shops[i].img; %>" alt="<%=shops[i].name; %>"></a>
+        </div>
+      <% } %>
+    </div>
+  </body>
+</html>
