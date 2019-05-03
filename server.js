@@ -10,7 +10,7 @@ const db = mongoose.connection;
 
 // configuration
 const PORT = process.env.PORT || 3000;
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/the_shop';
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/shops';
 
 // connect router
 const shopController = require('./controllers/shop.js');
@@ -44,6 +44,7 @@ app.use(session({
 // app listen
 app.listen(PORT, () => console.log('auth happening on port', PORT));
 
+// code graveyard
 // routes
 app.get('/', (req, res) => {
   res.send('index route')

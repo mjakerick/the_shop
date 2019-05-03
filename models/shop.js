@@ -14,7 +14,6 @@ const shopSchema = new Schema({
     rating: { type: Number, min: 1, max: 5},
   }],
   takesWalkIns: Boolean,
-  tags: { type: [String]},
 });
 
 const Shop = mongoose.model('Shop', shopSchema);
