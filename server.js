@@ -12,6 +12,10 @@ const db = mongoose.connection;
 const PORT = process.env.PORT || 3000;
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/the_shop';
 
+// connect router
+const shopController = require('./controllers/shop.js');
+app.use('/', shopController);
+
 // connect to Mongo
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true })
 mongoose.connection.once('open', () => {
