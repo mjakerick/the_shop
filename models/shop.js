@@ -12,7 +12,7 @@ const shopSchema = new Schema({
     artistName: String,
     instagramHandle: String,
     rating: { type: Number, min: 1, max: 5},
-  }]
+  }],
   takesWalkIns: Boolean,
   tags: { type: [String]},
 });
