@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <% include ../partials/head.ejs %>
+  </head>
+  <body>
+    <nav>
+      <% include ../partials/head.ejs %>
+    </nav>
+    <h1>the shop.</h1>
+    <h3>edit this shop.</h3>
+    <form action="/shops/<%=shop.id %>?_method=PUT" method="POST">
+      <input type="text" name="name" value="<%=shop.name %>" /><br />
+      <input type="text" name="address" value="<%=shop.address %>" /><br />
+      <input type="text" name="phone" value="<%=shop.phone %>" /><br />
+      <input type="text" name="hours" value="<%=shop.hours %>" /><br />
+      <input type="text" name="website" value="<%=shop.website %>" /><br />
+      <input type="text" name="img" value="<%=shop.img %>" /><br />
+      <input type="submit" value="update this shop." />
+    </form>
+  </body>
+</html>
