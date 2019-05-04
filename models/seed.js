@@ -6,11 +6,11 @@ module.exports = [
     "hours": "Monday - Saturday: 12PM - 8PM, Sunday: 1PM - 7PM",
     "website": "https://www.brownbrotherstattoo.com/",
     "img": "https://i.imgur.com/XWgw4oG.png",
-    "artists": [{
-      "artistName": "Max Brown",
-      "instagramHandle": "@maxwellquesterbrown",
-      "rating": 5,
-    }],
-    "takesWalkIns": true,
+    // "artists": [{
+    //   "artistName": "Max Brown",
+    //   "instagramHandle": "@maxwellquesterbrown",
+    //   "rating": 5,
+    // }],
+    // "takesWalkIns": true,
   }
 ]

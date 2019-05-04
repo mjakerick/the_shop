@@ -12,10 +12,6 @@ const db = mongoose.connection;
 const PORT = process.env.PORT || 3000;
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/shops';
 
-// connect router
-const shopController = require('./controllers/shop.js');
-app.use('/', shopController);
-
 // connect to Mongo
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true })
 mongoose.connection.once('open', () => {
@@ -41,11 +37,15 @@ app.use(session({
   saveinitialized: false
 }));
 
+// connect router
+const shopController = require('./controllers/shop.js');
+app.use('/', shopController);
+
 // app listen
 app.listen(PORT, () => console.log('auth happening on port', PORT));
 
 // code graveyard
 // routes
-app.get('/', (req, res) => {
-  res.send('index route')
-});
+// app.get('/', (req, res) => {
+//   res.send('index route')
+// });

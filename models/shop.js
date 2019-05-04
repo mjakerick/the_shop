@@ -8,12 +8,12 @@ const shopSchema = new Schema({
   hours: String,
   website: String,
   img: String,
-  artists: [{
-    artistName: String,
-    instagramHandle: String,
-    rating: { type: Number, min: 1, max: 5},
-  }],
-  takesWalkIns: Boolean,
+  // artists: [{
+  //   artistName: String,
+  //   instagramHandle: String,
+  //   rating: { type: Number, min: 1, max: 5},
+  // }],
+  // takesWalkIns: Boolean,
 });
 
 const Shop = mongoose.model('Shop', shopSchema);

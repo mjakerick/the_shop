@@ -15,6 +15,13 @@ router.get('/new', (req, res) => {
   res.render('new.ejs');
 })
 
+router.post('/', (req, res) => {
+  console.log(req.body);
+  Shop.create(req.body, () => {
+    res.redirect('/')
+  })
+})
+
 router.get('/seed', (req, res) => {
   Shop.create(shopSeed, (err, data) => {
     if (err) {
@@ -26,6 +33,6 @@ router.get('/seed', (req, res) => {
   res.redirect('/');
 });
 
-Shop.collection.drop();
+// Shop.collection.drop();
 
 module.exports = router;
