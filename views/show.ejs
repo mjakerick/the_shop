@@ -11,6 +11,15 @@
     <div class="container">
       <div class="shop">
         <h3><%=shop.name %> </h3>
+        <img src="<%=shop.img %>" alt="<%=shop.name %>" style="max-width: 400px;">
+        <ul>
+          <li><%=shop.address %></li>
+          <li><%=shop.phone %></li>
+          <li><%=shop.hours %></li>
+          <li>
+            <a href="<%=shop.website %>">link to shop website.</a>
+          </li>
+        </ul>
       </div>
       <a href="/<%=shop.id %>/edit"><input type="submit" value="edit this shop." /></a>
       <form class="/shops/<%=shop.id %>?_method=DELETE" method="POST">
