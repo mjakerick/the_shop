@@ -11,57 +11,9 @@
     <div class="container">
       <% for (let i = 0; i < shops.length; i++) { %>
         <div class="shop">
-          <!-- CODE FOR HOVER TEXT EFFECT -->
-          <style>
-            .shop {
-              position: relative;
-              width: 50%;
-            }
-
-            .image {
-              opacity: 1;
-              display: block;
-              width: 100%;
-              height: auto;
-              transition: .5s ease;
-              backface-visibility: hidden;
-            }
-
-            .middle {
-              transition: .5s ease;
-              opacity: 0;
-              position: absolute;
-              top: 50%;
-              left: 50%;
-              transform: translate(-50%, -50%);
-              -ms-transform: translate(-50%, -50%);
-              text-align: center;
-            }
-
-            .container:hover .image {
-              opacity: 0.3;
-            }
-
-            .container:hover .middle {
-              opacity: 1;
-            }
-
-            .text {
-              background-color: #grey;
-              color: black;
-              font-size: 16px;
-              padding: 16px 32px;
-            }
-          </style>
-          <a href="/shops/<%=shops[i].id;%>"><img src="<%=shops[i].img; %>" alt="<%=shops[i].name; %>" style="max-width: 400px;" class="image">
-          </a>
+          <a href="/shops/<%=shops[i].id;%>"><img src="<%=shops[i].img; %>" alt="<%=shops[i].name; %>" style="max-width: 400px;"></a>
         </div>
-      <div class="middle">
-        <div class="text">
-          <%=shops[i].name %>
-        </div>
-      </div>
+      <% } %>
     </div>
-    <% } %>
   </body>
 </html>
