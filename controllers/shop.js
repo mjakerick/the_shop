@@ -11,6 +11,14 @@ router.get('/', (req, res) => {
   });
 });
 
+router.get('/shops/:id', (req, res) => {
+  Shop.findById(req.params.id, (err, foundShop) => {
+    res.render('show.ejs', {
+      shop:foundShop
+    });
+  });
+});
+
 router.get('/new', (req, res) => {
   res.render('new.ejs');
 })
