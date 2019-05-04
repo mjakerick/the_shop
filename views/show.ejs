@@ -13,6 +13,9 @@
         <h3><%=shop.name %> </h3>
       </div>
       <a href="/<%=shop.id %>/edit"><input type="submit" value="edit this shop." /></a>
+      <form class="/shops/<%=shop.id %>?_method=DELETE" method="POST">
+        <input type="submit" value="delete this shop." />
+      </form>
     </div>
   </body>
 </html>

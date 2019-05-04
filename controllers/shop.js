@@ -38,6 +38,13 @@ router.post('/', (req, res) => {
   });
 });
 
+router.delete('/:id', (req, res) => {
+  // Shop.findByIdAndRemove(req.params.id, (err, data) => {
+  //   res.redirect('/')
+  // });
+  res.send('deleting');
+});
+
 router.get('/:id/edit', (req, res) => {
   Shop.findById(req.params.id, (err, foundShop) => {
     {
