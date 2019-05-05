@@ -7,6 +7,7 @@ const mongoose = require('mongoose');
 const app = express();
 const session = require('express-session');
 const db = mongoose.connection;
+const morgan = require('morgan');
 
 // configuration
 const PORT = process.env.PORT || 3000;
@@ -36,6 +37,7 @@ app.use(session({
   resave: false,
   saveinitialized: false
 }));
+app.use(morgan('tiny'));
 
 // connect router
 const shopController = require('./controllers/shop.js');
