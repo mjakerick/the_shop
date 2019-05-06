@@ -8,6 +8,7 @@ const session = require('express-session');
 const db = mongoose.connection;
 const morgan = require('morgan');
 const bcrypt = require('bcrypt');
+const timestamps = require('mongoose-timestamp');
 
 // configuration
 const PORT = process.env.PORT || 3000;
