@@ -23,13 +23,16 @@ router.get('/', (req, res) => {
 router.get('/shops/:id', (req, res) => {
   Shop.findById(req.params.id, (err, foundShop) => {
     res.render('show.ejs', {
-      shop:foundShop
+      shop:foundShop,
+      currentUser: req.session.currentUser
     });
   });
 });
 
 router.get('/new', (req, res) => {
-  res.render('new.ejs');
+  res.render('new.ejs', {
+    currentUser: req.session.currentUser
+  });
 });
 
 router.post('/', (req, res) => {
@@ -53,7 +56,8 @@ router.get('/:id/edit', (req, res) => {
       res.render(
         'edit.ejs',
         {
-          shop: foundShop
+          shop: foundShop,
+          currentUser: req.session.currentUser
         }
       );
     };
