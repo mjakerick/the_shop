@@ -46,6 +46,8 @@ const userController = require('./controllers/user.js');
 app.use('/users', userController);
 const sessionsController = require('./controllers/sessions.js');
 app.use('/sessions', sessionsController);
+const storyController = require('./controllers/story.js');
+app.use('/story', storyController);
 
 // app listen
 app.listen(PORT, () => console.log('auth happening on port', PORT));

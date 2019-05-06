@@ -21,7 +21,12 @@
           </li>
         </ul>
       </div>
-      <a href="/<%=shop.id %>/edit"><input type="submit" value="edit this shop." /></a>
+      <% if(currentUser) { %>
+        <a href="/<%=shop.id %>/edit"><input type="submit" value="edit this shop." /></a>
+        <a href="/story/new"><input type="submit" value="add your shop story." value=""></a>
+      <% } else { %>
+        <p>create an account and log-in to add your story about this shop or edit this shop.</p>
+      <% } %>
     </div>
   </body>
 </html>
