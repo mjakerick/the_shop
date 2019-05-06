@@ -7,6 +7,7 @@ const app = express();
 const session = require('express-session');
 const db = mongoose.connection;
 const morgan = require('morgan');
+const bcrypt = require('bcrypt');
 
 // configuration
 const PORT = process.env.PORT || 3000;
