@@ -10,12 +10,12 @@
     <h1>the shop.</h1>
     <h3>edit this shop.</h3>
     <form action="/shops/<%=shop.id %>?_method=PUT" method="POST">
-      <input type="text" name="name" value="<%=shop.name %>" /><br />
-      <input type="text" name="address" value="<%=shop.address %>" /><br />
-      <input type="text" name="phone" value="<%=shop.phone %>" /><br />
-      <input type="text" name="hours" value="<%=shop.hours %>" /><br />
-      <input type="text" name="website" value="<%=shop.website %>" /><br />
-      <input type="text" name="img" value="<%=shop.img %>" /><br />
+      <input type="text" name="name" value="<%=shop.name %>" placeholder="name."/><br />
+      <input type="text" name="address" value="<%=shop.address %>" placeholder="address."/><br />
+      <input type="text" name="phone" value="<%=shop.phone %>" placeholder="phone number."/><br />
+      <input type="text" name="hours" value="<%=shop.hours %>" placeholder="shop hours."/><br />
+      <input type="text" name="website" value="<%=shop.website %>" placeholder="website."/><br />
+      <input type="text" name="img" value="<%=shop.img %>" placeholder="link to image."/><br />
       <input type="submit" value="update this shop." />
     </form>
     <form action="/shops/<%=shop.id %>?_method=DELETE" method="POST">
