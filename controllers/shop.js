@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Shop = require('../models/shop.js');
 const shopSeed = require('../models/seed.js');
+const Story = require('../models/story.js');
 
 router.put('/shops/:id', (req, res) => {
   console.log(req.body);
@@ -20,11 +21,23 @@ router.get('/', (req, res) => {
   });
 });
 
+// router.get('/shops/:id', (req, res) => {
+//   Shop.findById(req.params.id, (err, foundShop) => {
+//     res.render('show.ejs', {
+//       shop:foundShop,
+//       currentUser: req.session.currentUser
+//     });
+//   });
+// });
+
 router.get('/shops/:id', (req, res) => {
   Shop.findById(req.params.id, (err, foundShop) => {
-    res.render('show.ejs', {
-      shop:foundShop,
-      currentUser: req.session.currentUser
+    Story.find({}, (err, foundStories) => {
+      res.render('show.ejs', {
+        shop:foundShop,
+        currentUser: req.session.currentUser,
+        story:foundStories
+      });
     });
   });
 });

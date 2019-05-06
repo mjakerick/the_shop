@@ -4,7 +4,7 @@ const timestamps = require('mongoose-timestamp');
 
 const storySchema = Schema({
   rating: { type: Number, max: 5, min: 1 },
-  story: String
+  story: String,
 });
 
 storySchema.plugin(timestamps);

@@ -21,12 +21,22 @@
           </li>
         </ul>
       </div>
-      <% if(currentUser) { %>
-        <a href="/<%=shop.id %>/edit"><input type="submit" value="edit this shop." /></a>
-        <a href="/story/new"><input type="submit" value="add your shop story." value=""></a>
-      <% } else { %>
-        <p>create an account and log-in to add your story about this shop or edit this shop.</p>
-      <% } %>
+      <div class="options">
+        <% if(currentUser) { %>
+          <a href="/<%=shop.id %>/edit"><input type="submit" value="edit this shop." /></a>
+          <a href="/story/new"><input type="submit" value="add your shop story." value=""></a>
+        <% } else { %>
+          <p>create an account and log-in to add your story about this shop or edit this shop.</p>
+        <% } %>
+      </div>
+      <div class="stories">
+        <% for (let i = 0; i < story.length; i++) { %>
+          <div class="story">
+            <p class="rating"><%=story.rating %></p>
+            <p class="story"><%=story.story %></p>
+          </div>
+        <% } %>
+      </div>
     </div>
   </body>
 </html>

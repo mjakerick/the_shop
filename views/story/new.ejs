@@ -11,6 +11,11 @@
     <div class="container">
       <h3>tell your story.</h3>
       <form action="/story" method="POST">
+        <select class="" name="shopId">
+          <% for(let i = 0; i < shops.length; i++) { %>
+            <option value="<%=shops[i]._id%>"><%=shops[i].name%></option>
+          <% } %>
+        </select>
         <div class="row">
           <div class="rating">rate this shop:
             <input type="number" name="rating" min="1" max="5">
