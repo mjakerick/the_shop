@@ -5,7 +5,10 @@
       <!-- <div class="right" style="float: right;"> -->
         <% if(currentUser) { %>
           welcome <%=currentUser.username%>!
-          <a href="/sessions">log out.</a>
+          <!-- <a href="/sessions">log out.</a> -->
+          <form action="/sessions?_method=DELETE" method="POST">
+            <input type="submit" value="log out.">
+          </form>
         <% } else { %>
           <a href="/users/new">sign up.</a>
           <a href="/sessions/new">log-in.</a>
