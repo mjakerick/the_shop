@@ -41,6 +41,8 @@ app.use(morgan('tiny'));
 // connect router
 const shopController = require('./controllers/shop.js');
 app.use('/', shopController);
+const userController = require('./controllers/user.js');
+app.use('/users', userController);
 
 // app listen
 app.listen(PORT, () => console.log('auth happening on port', PORT));
