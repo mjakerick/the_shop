@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <% include ../partials/head.ejs %>
+  </head>
+  <body>
+    <nav>
+      <% include ../partials/nav.ejs %>
+    </nav>
+    <h1>the shop.</h1>
+    <div class="container">
+      <h3>create new user.</h3>
+      <form class="" action="index.html" method="post">
+        <div class="row">
+          <div class="input">
+            <input placeholder="placeholder" id="username" type="text" class="validate" name="username">
+            <label for="username">user name.</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="password">
+            <input id="password" type="password" class="validate" name="password" required>
+            <label for="password">password.</label>
+          </div>
+        </div>
+        <button type="submit" name="action">submit.</button>
+      </form>
+    </div>
+  </body>
+</html>
