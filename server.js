@@ -43,6 +43,8 @@ const shopController = require('./controllers/shop.js');
 app.use('/', shopController);
 const userController = require('./controllers/user.js');
 app.use('/users', userController);
+const sessionsController = require('./controllers/sessions.js');
+app.use('/sessions', sessionsController);
 
 // app listen
 app.listen(PORT, () => console.log('auth happening on port', PORT));

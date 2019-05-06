@@ -3,6 +3,12 @@
         <a href="/new">add new shop.</a>
       <!-- </div> -->
       <!-- <div class="right" style="float: right;"> -->
-        <a href="/users/new">sign up.</a>
-        <a href="#">log-in.</a>
+        <% if(currentUser) { %>
+          welcome <%=currentUser.username%>!
+          <a href="/sessions">log out.</a>
+        <% } else { %>
+          <a href="/users/new">sign up.</a>
+          <a href="#">log-in.</a>
+        <% } %>
+
       <!-- </div> -->

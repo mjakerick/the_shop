@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <% include ../partials/head.ejs %>
+    <% include ../../partials/head.ejs %>
   </head>
   <body>
     <nav>
-      <% include ../partials/nav.ejs %>
+      <% include ../../partials/nav.ejs %>
     </nav>
     <h1>the shop.</h1>
     <div class="container">
       <h3>log-in.</h3>
-      <form class="" action="index.html" method="post">
+      <form action="/sessions" method="POST">
         <div class="row">
           <div class="input">
             <input placeholder="placeholder" id="username" type="text" class="validate" name="username">

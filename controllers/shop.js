@@ -14,7 +14,8 @@ router.put('/shops/:id', (req, res) => {
 router.get('/', (req, res) => {
   Shop.find({}, (error, allShops) => {
     res.render('index.ejs', {
-      shops: allShops
+      shops: allShops,
+      currentUser: req.session.currentUser
     });
   });
 });
