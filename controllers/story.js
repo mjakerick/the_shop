@@ -26,8 +26,13 @@ story.post('/', (req, res) => {
 });
 
 story.delete('/:id/', (req, res) => {
-  Story.findByIdAndRemove(req.params.id, (err, data) => {
-    res.redirect('/')
+  Story.findByIdAndRemove(req.params.id, (err, foundStory) => {
+    Shop.findOne({ 'stories._id' : req.params.id }, (err, foundShop) => {
+      foundShop.stories.id(req.params.id).remove();
+      foundShop.save((err, data) => {
+        res.redirect('/')
+      });
+    });
   });
 });
 

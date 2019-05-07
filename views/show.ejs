@@ -26,17 +26,17 @@
           <a href="/<%=shop.id %>/edit"><input type="submit" value="edit this shop." /></a>
           <a href="/story/new"><input type="submit" value="add your shop story." value=""></a>
         <% } else { %>
-          <p>create an account and log-in to add your story about this shop or edit this shop.</p>
+          <p>create an account and log-in to add your story or edit this shop.</p>
         <% } %>
       </div>
       <div class="stories">
-        <% for (let i = 0; i < story.length; i++) { %>
+        <% for (let i = 0; i < shop.stories.length; i++) { %>
           <div class="story">
-            <p class="username"><%=story[i].username%></p>
-            <p class="rating"><%=story[i].rating %></p>
-            <p class="story"><%=story[i].story %></p>
-            <form action="/story/<%=story[i].id %>?_method=DELETE" method="POST">
-              <input type="submit" value="delete this story." />
+            <p class="story"><%=shop.stories[i].story %></p>
+            <p class="rating">rated <%=shop.stories[i].rating %> out of 5</p>
+            <p class="story-foot">added by <%=shop.stories[i].username%> on <%=shop.stories[i].createdAt%>. </p>
+            <form action="/story/<%=shop.stories[i].id %>?_method=DELETE" method="POST">
+            <input type="submit" value="delete this story." />
             </form>
           </div>
         <% } %>
