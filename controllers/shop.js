@@ -33,6 +33,7 @@ router.get('/', (req, res) => {
 router.get('/shops/:id', (req, res) => {
   Shop.findById(req.params.id, (err, foundShop) => {
     Story.find({}, (err, foundStories) => {
+      console.log(foundStories);
       res.render('show.ejs', {
         shop:foundShop,
         currentUser: req.session.currentUser,

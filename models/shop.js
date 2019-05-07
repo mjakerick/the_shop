@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const Story = require('./story.js');
 
 const shopSchema = new Schema({
   name: { type: String, required: true },
@@ -8,6 +9,7 @@ const shopSchema = new Schema({
   hours: String,
   website: String,
   img: String,
+  stories: [Story.schema]
   // artists: [{
   //   artistName: String,
   //   instagramHandle: String,

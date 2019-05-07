@@ -32,8 +32,9 @@
       <div class="stories">
         <% for (let i = 0; i < story.length; i++) { %>
           <div class="story">
-            <p class="rating"><%=story.rating %></p>
-            <p class="story"><%=story.story %></p>
+            <p class="username"><%=story[i].username%></p>
+            <p class="rating"><%=story[i].rating %></p>
+            <p class="story"><%=story[i].story %></p>
           </div>
         <% } %>
       </div>
