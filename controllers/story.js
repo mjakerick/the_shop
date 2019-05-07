@@ -16,19 +16,11 @@ story.get('/new', (req, res) => {
 story.post('/', (req, res) => {
   Shop.findById(req.body.shopId, (err, foundShop) => {
     req.body.username = req.session.currentUser.username;
-    console.log(req.session);
     Story.create(req.body, (err, createdStory) => {
-      console.log(err);
-      console.log(createdStory);
       foundShop.stories.push(createdStory);
       foundShop.save((err,data) => {
         res.redirect('/')
       });
-      // if (err) {
-      //   console.log(err);
-      // }
-      // console.log(createdStory);
-      // res.redirect('/')
     });
   });
 });
