@@ -9,7 +9,6 @@ const db = mongoose.connection;
 const morgan = require('morgan');
 const bcrypt = require('bcrypt');
 const timestamps = require('mongoose-timestamp');
-const client = require('filestack-js').init('AvDfNEonoRdCUpMUUKqQ5z');
 
 // configuration
 const PORT = process.env.PORT || 3000;

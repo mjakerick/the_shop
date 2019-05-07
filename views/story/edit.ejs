@@ -9,17 +9,23 @@
     </nav>
     <h1>the shop.</h1>
     <h3>edit your story.</h3>
-    <form action="/shops/<%=shop.id %>?_method=PUT" method="POST">
-      <input type="text" name="name" value="<%=shop.name %>" placeholder="name."/><br />
-      <input type="text" name="address" value="<%=shop.address %>" placeholder="address."/><br />
-      <input type="text" name="phone" value="<%=shop.phone %>" placeholder="phone number."/><br />
-      <input type="text" name="hours" value="<%=shop.hours %>" placeholder="shop hours."/><br />
-      <input type="text" name="website" value="<%=shop.website %>" placeholder="website."/><br />
-      <input type="text" name="img" value="<%=shop.img %>" placeholder="link to image."/><br />
-      <input type="submit" value="update this shop." />
-    </form>
-    <form action="/story/<%=story.id %>?_method=DELETE" method="POST">
-      <input type="submit" value="delete this shop." />
+    <form action="/story/<%=stories.id %>?_method=PUT" method="POST">
+      <select class="" name="shopId">
+        <% for(let i = 0; i < shops.length; i++) { %>
+          <option value="<%=shops[i]._id%>"><%=shops[i].name%></option>
+        <% } %>
+      </select>
+      <div class="row">
+        <div class="rating">rate this shop:
+          <input type="number" name="rating" min="1" max="5" value="<%=stories.rating %>">
+        </div>
+      </div>
+      <div class="row">
+        <div class="story">
+          <textarea name="story" rows="8" cols="80" value="<%=stories.story %>"></textarea>
+        </div>
+      </div>
+      <button type="submit">update your story.</button>
     </form>
   </body>
 </html>
