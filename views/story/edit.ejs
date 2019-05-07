@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <% include ../../partials/head.ejs %>
+  </head>
+  <body>
+    <nav>
+      <% include ../../partials/nav.ejs %>
+    </nav>
+    <h1>the shop.</h1>
+    <h3>edit your story.</h3>
+    <form action="/shops/<%=shop.id %>?_method=PUT" method="POST">
+      <input type="text" name="name" value="<%=shop.name %>" placeholder="name."/><br />
+      <input type="text" name="address" value="<%=shop.address %>" placeholder="address."/><br />
+      <input type="text" name="phone" value="<%=shop.phone %>" placeholder="phone number."/><br />
+      <input type="text" name="hours" value="<%=shop.hours %>" placeholder="shop hours."/><br />
+      <input type="text" name="website" value="<%=shop.website %>" placeholder="website."/><br />
+      <input type="text" name="img" value="<%=shop.img %>" placeholder="link to image."/><br />
+      <input type="submit" value="update this shop." />
+    </form>
+    <form action="/story/<%=story.id %>?_method=DELETE" method="POST">
+      <input type="submit" value="delete this shop." />
+    </form>
+  </body>
+</html>

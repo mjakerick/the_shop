@@ -25,4 +25,10 @@ story.post('/', (req, res) => {
   });
 });
 
+story.delete('/:id/', (req, res) => {
+  Story.findByIdAndRemove(req.params.id, (err, data) => {
+    res.redirect('/')
+  });
+});
+
 module.exports = story;
