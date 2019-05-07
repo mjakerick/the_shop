@@ -9,6 +9,7 @@ const db = mongoose.connection;
 const morgan = require('morgan');
 const bcrypt = require('bcrypt');
 const timestamps = require('mongoose-timestamp');
+const cloudinary = require('cloudinary').v2;
 
 // configuration
 const PORT = process.env.PORT || 3000;
