@@ -4,16 +4,29 @@
     <% include ../partials/head.ejs %>
   </head>
   <body>
-    <nav>
-      <% include ../partials/nav.ejs %>
-    </nav>
-    <h1>the shop.</h1>
+    <style>
+      <% include ../partials/css.ejs %>
+    </style>
     <div class="container">
-      <% for (let i = 0; i < shops.length; i++) { %>
-        <div class="shop">
-          <a href="/shops/<%=shops[i].id;%>"><img src="<%=shops[i].img; %>" alt="<%=shops[i].name; %>" style="max-width: 400px;"></a>
+      <nav>
+        <% include ../partials/nav.ejs %>
+        <h1>the shop.</h1>
+      </nav>
+      <div class="box">
+        <div>
+          <div class="d-flex align-content-around flex-wrap">
+          <% for (let i = 0; i < shops.length; i++) { %>
+            <div class="card">
+              <img src="<%=shops[i].img; %>" class="card-img-top" alt="<%=shops[i].name; %>" style="max-width:300px;">
+              <div class="card-body">
+                <h5 class="card-title"><%=shops[i].name %></h5>
+                <p class="card-body">located in <%=shops[i].city %></p>
+                <a href="/shops/<%=shops[i].id;%>" class="btn btn-primary">visit this shop.</a>
+              </div>
+            </div>
+          <% } %>
         </div>
-      <% } %>
+      </div>
     </div>
     <section>
       <% include ../partials/scripts.js %>
