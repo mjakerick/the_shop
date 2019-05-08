@@ -1,17 +1,27 @@
-      <!-- <div class="left" style="float: left;"> -->
-        <a href="/">home.</a>
-        <a href="/new">add new shop.</a>
-      <!-- </div> -->
-      <!-- <div class="right" style="float: right;"> -->
-        <% if(currentUser) { %>
-          welcome <%=currentUser.username%>!
-          <!-- <a href="/sessions">log out.</a> -->
-          <form action="/sessions?_method=DELETE" method="POST">
-            <input type="submit" value="log out.">
-          </form>
-        <% } else { %>
-          <a href="/users/new">sign up.</a>
-          <a href="/sessions/new">log-in.</a>
-        <% } %>
-
-      <!-- </div> -->
+        <ul class="nav nav-pills">
+          <li class="nav-item">
+            <a class="nav-link active" href="/">home.</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="/new">add new shop.</a>
+          </li>
+          <% if(currentUser) { %>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">welcome <%=currentUser.username%>!</a>
+            </li>
+            <div class="dropdown-menu">
+              <a class="downdown-item" href="#">
+                <form action="/sessions?_method=DELETE" method="POST">
+                  <input type="submit" value="log out.">
+                </form>
+              </a>
+            </div>
+          <% } else { %>
+            <li class="nav-item">
+              <a href="/users/new">sign up.</a>
+            </li>
+            <li class="nav-item">
+              <a href="/sessions/new">log-in.</a>
+            </li>
+          <% } %>
+        </ul>
