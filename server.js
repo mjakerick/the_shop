@@ -9,7 +9,6 @@ const db = mongoose.connection;
 const morgan = require('morgan');
 const bcrypt = require('bcrypt');
 const timestamps = require('mongoose-timestamp');
-const bootstrap = require('bootstrap');
 
 // configuration
 const PORT = process.env.PORT || 3000;
