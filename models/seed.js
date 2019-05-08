@@ -2,6 +2,7 @@ module.exports = [
   {
     "name": "Brown Brothers Tattoo",
     "address": "904 N California Ave, Chicago, IL 60622",
+    "city": "Chicago, IL",
     "phone": "(773) 252-9575",
     "hours": "Monday - Saturday: 12PM - 8PM, Sunday: 1PM - 7PM",
     "website": "https://www.brownbrotherstattoo.com/",
@@ -16,6 +17,7 @@ module.exports = [
   {
     "name": "Allied Tattoo",
     "address": "48 1/2, Grattan Street, Brooklyn, NY 11237",
+    "city": "Brooklyn, NY",
     "phone": "(347) 725-4861",
     "hours": "Sunday - Thursday: 12PM - 8PM, Friday - Saturday: 12PM - 10PM",
     "website": "http://www.alliedtattoo.com/",
@@ -30,6 +32,7 @@ module.exports = [
   {
     "name": "Atlas Tattoo",
     "address": "4543 N. Albina Ave. Portland, Oregon 97217",
+    "city": "Portland, OR",
     "phone": "(503) 281-7499",
     "hours": "12PM - 7PM Daily",
     "website": "http://www.atlastattoo.com/",
@@ -44,6 +47,7 @@ module.exports = [
   {
     "name": "Rose Tattoo Parlour",
     "address": "382 Graham Ave, Brooklyn, NY 11211",
+    "city": "Brooklyn, NY",
     "phone": "(347) 529-5064",
     "hours": "12PM - 8PM Daily",
     "website": "https://www.rosetattoonyc.com/",

@@ -5,6 +5,7 @@ const Story = require('./story.js');
 const shopSchema = new Schema({
   name: { type: String, required: true },
   address: String,
+  city: String,
   phone: String,
   hours: String,
   website: String,
