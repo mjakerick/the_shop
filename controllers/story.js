@@ -2,7 +2,6 @@ const express = require('express');
 const story = express.Router();
 const Story = require('../models/story.js');
 const Shop = require('../models/shop.js');
-const cloudinary = require('cloudinary').v2;
 
 story.get('/new', (req, res) => {
   // res.send('ready for your story')
