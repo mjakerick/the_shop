@@ -12,24 +12,17 @@
         <h1>the shop.</h1>
         <% include ../../partials/nav.ejs %>
       </nav>
-      <div class="container">
+      <div class="shop">
         <h3>tell your story.</h3>
         <form action="/story" method="POST">
           <select class="" name="shopId">
             <% for(let i = 0; i < shops.length; i++) { %>
               <option value="<%=shops[i]._id%>"><%=shops[i].name%></option>
             <% } %>
-          </select>
-          <div class="row">
-            <div class="rating">rate this shop:
-              <input type="number" name="rating" min="1" max="5">
-            </div>
-          </div>
-          <div class="row">
-            <div class="story">
-              <textarea name="story" rows="8" cols="80"></textarea>
-            </div>
-          </div>
+          </select><br />
+          <span>rate this shop:</span>
+              <input type="number" name="rating" min="1" max="5" style:"width:30px;">
+              <textarea name="story" rows="8" style="width:450px;" placeholder="tell your story."></textarea>
           <button type="submit">submit your story.</button>
         </form>
         <br/>
