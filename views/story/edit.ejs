@@ -4,29 +4,37 @@
     <% include ../../partials/head.ejs %>
   </head>
   <body>
-    <nav>
-      <% include ../../partials/nav.ejs %>
-    </nav>
-    <h1>the shop.</h1>
-    <h3>edit your story.</h3>
-    <form action="/story/<%=stories.id %>?_method=PUT" method="POST">
-      <select class="" name="shopId">
-        <% for(let i = 0; i < shops.length; i++) { %>
-          <option value="<%=shops[i]._id%>"><%=shops[i].name%></option>
-        <% } %>
-      </select>
-      <div class="row">
-        <div class="rating">rate this shop:
-          <input type="number" name="rating" min="1" max="5" value="<%=stories.rating %>">
+    <style>
+      <% include ../../partials/css.ejs %>
+    </style>
+    <div class="container">
+      <nav>
+        <h1>the shop.</h1>
+        <% include ../../partials/nav.ejs %>
+      </nav>
+      <h3>edit your story.</h3>
+      <form action="/story/<%=stories.id %>?_method=PUT" method="POST">
+        <select class="" name="shopId">
+          <% for(let i = 0; i < shops.length; i++) { %>
+            <option value="<%=shops[i]._id%>"><%=shops[i].name%></option>
+          <% } %>
+        </select>
+        <div class="row">
+          <div class="rating">rate this shop:
+            <input type="number" name="rating" min="1" max="5" value="<%=stories.rating %>">
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="story">
-          <textarea name="story" rows="8" cols="80" value="<%=stories.story %>"></textarea>
+        <div class="row">
+          <div class="story">
+            <textarea name="story" rows="8" cols="80" value="<%=stories.story %>"></textarea>
+          </div>
         </div>
-      </div>
-      <button type="submit">update your story.</button>
-    </form>
+        <button type="submit">update your story.</button>
+      </form>
+      <footer>
+        <% include ../../partials/footer.ejs %>
+      </footer>
+    </div>
     <section>
       <% include ../../partials/scripts.js %>
     </section>

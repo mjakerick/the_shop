@@ -4,49 +4,57 @@
     <% include ../partials/head.ejs %>
   </head>
   <body>
-    <nav>
-      <% include ../partials/nav.ejs %>
-    </nav>
-    <h1>the shop.</h1>
+    <style>
+      <% include ../partials/css.ejs %>
+    </style>
     <div class="container">
-      <div class="shop">
-        <h3><%=shop.name %> </h3>
-        <img src="<%=shop.img %>" alt="<%=shop.name %>" style="max-width: 400px;">
-        <ul>
-          <li><%=shop.address %></li>
-          <li><%=shop.phone %></li>
-          <li><%=shop.hours %></li>
-          <li>
-            <a href="<%=shop.website %>" target="_blank">link to shop website.</a>
-          </li>
-        </ul>
-      </div>
-      <div class="options">
-        <% if(currentUser) { %>
-          <a href="/<%=shop.id %>/edit"><input type="submit" value="edit this shop." /></a>
-          <a href="/story/new"><input type="submit" value="add your shop story." value=""></a>
-        <% } else { %>
-          <p>create an account and log-in to add your story or edit this shop.</p>
-        <% } %>
-      </div>
-      <div class="stories">
-        <% for (let i = 0; i < shop.stories.length; i++) { %>
-          <div class="story">
-            <p class="story"><%=shop.stories[i].story %></p>
-            <p class="rating">rated <%=shop.stories[i].rating %> out of 5</p>
-            <p class="story-foot">added by <%=shop.stories[i].username%> on <%=shop.stories[i].createdAt%>. </p>
-            <% if (currentUser) { %>
-              <% if (shop.stories[i].username === currentUser.username) { %>
-                <form action="/story/<%=shop.stories[i].id %>?_method=DELETE" method="POST">
-                <input type="submit" value="delete this story." />
-                </form>
-                <% } else { %>
-                <br />
+      <nav>
+        <h1>the shop.</h1>
+        <% include ../partials/nav.ejs %>
+      </nav>
+      <div class="container-2">
+        <div class="shop">
+          <h3><%=shop.name %> </h3>
+          <img src="<%=shop.img %>" alt="<%=shop.name %>" style="max-width: 400px;">
+          <ul>
+            <li><%=shop.address %></li>
+            <li><%=shop.phone %></li>
+            <li><%=shop.hours %></li>
+            <li>
+              <a href="<%=shop.website %>" target="_blank">link to shop website.</a>
+            </li>
+          </ul>
+        </div>
+        <div class="options">
+          <% if(currentUser) { %>
+            <a href="/<%=shop.id %>/edit"><input type="submit" value="edit this shop." /></a>
+            <a href="/story/new"><input type="submit" value="add your shop story." value=""></a>
+          <% } else { %>
+            <p>create an account and log-in to add your story or edit this shop.</p>
+          <% } %>
+        </div>
+        <div class="stories">
+          <% for (let i = 0; i < shop.stories.length; i++) { %>
+            <div class="story">
+              <p class="story"><%=shop.stories[i].story %></p>
+              <p class="rating">rated <%=shop.stories[i].rating %> out of 5</p>
+              <p class="story-foot">added by <%=shop.stories[i].username%> on <%=shop.stories[i].createdAt%>. </p>
+              <% if (currentUser) { %>
+                <% if (shop.stories[i].username === currentUser.username) { %>
+                  <form action="/story/<%=shop.stories[i].id %>?_method=DELETE" method="POST">
+                  <input type="submit" value="delete this story." />
+                  </form>
+                  <% } else { %>
+                  <br />
+                <% } %>
               <% } %>
-            <% } %>
-          </div>
-        <% } %>
+            </div>
+          <% } %>
+        </div>
       </div>
+      <footer>
+        <% include ../partials/footer.ejs %>
+      </footer>
     </div>
     <section>
       <% include ../partials/scripts.js %>

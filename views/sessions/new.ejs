@@ -4,27 +4,35 @@
     <% include ../../partials/head.ejs %>
   </head>
   <body>
-    <nav>
-      <% include ../../partials/nav.ejs %>
-    </nav>
-    <h1>the shop.</h1>
+    <style>
+      <% include ../../partials/css.ejs %>
+    </style>
     <div class="container">
-      <h3>log-in.</h3>
-      <form action="/sessions" method="POST">
-        <div class="row">
-          <div class="input">
-            <input placeholder="username" id="username" type="text" class="validate" name="username">
-            <!-- <label for="username">user name.</label> -->
+      <nav>
+        <h1>the shop.</h1>
+        <% include ../../partials/nav.ejs %>
+      </nav>
+      <div class="container">
+        <h3>log-in.</h3>
+        <form action="/sessions" method="POST">
+          <div class="row">
+            <div class="input">
+              <input placeholder="username" id="username" type="text" class="validate" name="username">
+              <!-- <label for="username">user name.</label> -->
+            </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="password">
-            <input placeholder="password" id="password" type="password" class="validate" name="password" required>
-            <!-- <label for="password">password.</label> -->
+          <div class="row">
+            <div class="password">
+              <input placeholder="password" id="password" type="password" class="validate" name="password" required>
+              <!-- <label for="password">password.</label> -->
+            </div>
           </div>
-        </div>
-        <button type="submit" name="action">submit.</button>
-      </form>
+          <button type="submit" name="action">submit.</button>
+        </form>
+      </div>
+      <footer>
+        <% include ../../partials/footer.ejs %>
+      </footer>
     </div>
     <section>
       <% include ../../partials/scripts.js %>
