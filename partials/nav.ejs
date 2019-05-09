@@ -1,17 +1,15 @@
-      <!-- <div class="left" style="float: left;"> -->
-        <a href="/">home.</a>
-        <a href="/new">add new shop.</a>
-      <!-- </div> -->
-      <!-- <div class="right" style="float: right;"> -->
+      <ul class="nav" float="right">
+        <li><a href="/">home.</a></li>
+        <li><a href="/new">add new shop.</a></li>
         <% if(currentUser) { %>
-          welcome <%=currentUser.username%>!
-          <!-- <a href="/sessions">log out.</a> -->
-          <form action="/sessions?_method=DELETE" method="POST">
-            <input type="submit" value="log out.">
-          </form>
+          <li>welcome <%=currentUser.username%>!</li>
+          <li>
+            <form action="/sessions?_method=DELETE" method="POST">
+              <input type="submit" value="log out.">
+            </form>
+          </li>
         <% } else { %>
-          <a href="/users/new">sign up.</a>
-          <a href="/sessions/new">log-in.</a>
+          <li><a href="/users/new">sign up.</a></li>
+          <li><a href="/sessions/new">log-in.</a></li>
         <% } %>
-
-      <!-- </div> -->
+      </ul>
