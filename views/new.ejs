@@ -12,16 +12,19 @@
         <h1>the shop.</h1>
         <% include ../partials/nav.ejs %>
       </nav>
-      <h3>add new shop.</h3>
-      <form action="/" method="POST">
-        <input type="text" name="name" placeholder="name." /><br />
-        <input type="text" name="address" placeholder="address." /><br />
-        <input type="text" name="phone" placeholder="phone number." /><br />
-        <input type="text" name="hours" placeholder="shop hours." /><br />
-        <input type="text" name="website" placeholder="website." /><br />
-        <input type="text" name="img" placeholder="link to image." /><br />
-        <input type="submit" value="add new shop." />
-      </form>
+      <div class="shop">
+        <h3>add new shop.</h3>
+        <form action="/" method="POST">
+          <input type="text" name="name" placeholder="name." /><br />
+          <input type="text" name="city" placeholder="city." /><br />
+          <input type="text" name="address" placeholder="address." /><br />
+          <input type="text" name="phone" placeholder="phone number." /><br />
+          <input type="text" name="hours" placeholder="shop hours." /><br />
+          <input type="text" name="website" placeholder="website." /><br />
+          <input type="text" name="img" placeholder="link to image." /><br />
+          <input type="submit" value="add new shop." />
+        </form>
+      </div>
       <footer>
         <% include ../partials/footer.ejs %>
       </footer>
