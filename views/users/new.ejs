@@ -12,21 +12,11 @@
         <h1>the shop.</h1>
         <% include ../../partials/nav.ejs %>
       </nav>
-      <div class="container-2">
+      <div class="shop">
         <h3>create new user.</h3>
         <form class="" action="/users" method="POST">
-          <div class="row">
-            <div class="input">
-              <input placeholder="username" id="username" type="text" class="validate" name="username">
-              <!-- <label for="username">user name.</label> -->
-            </div>
-          </div>
-          <div class="row">
-            <div class="password">
-              <input placeholder="password" id="password" type="password" class="validate" name="password" required>
-              <!-- <label for="password">password.</label> -->
-            </div>
-          </div>
+          <input placeholder="username" id="username" type="text" class="validate" name="username">
+          <input placeholder="password" id="password" type="password" class="validate" name="password" required>
           <button type="submit" name="action" onclick="alert('thanks for signing up! please log-in.')">submit.</button>
         </form>
       </div>
